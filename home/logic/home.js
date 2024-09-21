@@ -5,7 +5,7 @@ let product = {}
 let productCounter;
 
 if(!localStorage.getItem('user')){
-    window.location.href = 'login/login.html';
+    window.location.href = 'login.html';
 }
 
 menuBtn.onclick = function() {
@@ -44,5 +44,5 @@ addCart.forEach(function(item){
 
 document.querySelector('.logout').onclick = function() {
     localStorage.removeItem('user')
-    window.location.href = 'login/login.html'
+    window.location.href = 'login.html'
 }
