@@ -3,7 +3,7 @@ let password = document.getElementById('password');
 let = user = {}
 
 if(localStorage.getItem('user')){
-    window.location.href = '/index.html';
+    window.location.href = '../../index.html';
 }
 
 document.querySelector('button').onclick = function(e){
@@ -17,7 +17,7 @@ document.querySelector('button').onclick = function(e){
             products: [],
         }
         localStorage.setItem('user', JSON.stringify(user))
-        window.location.href = '/index.html'
+        window.location.href = '../../index.html'
         username.value = '';
         password.value = '';
     }
