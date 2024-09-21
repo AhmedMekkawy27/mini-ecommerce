@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./style/output.css" />
+  </head>
+  <body class="bg-slate-200">
+    <nav
+      class="bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-600"
+    >
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/pages/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+            >Shop</span
+          >
+        </a>
+        <div class="flex md:order-2 space-x-3 rtl:space-x-reverse">
+          <button
+            type="button"
+            class="logout text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+          >
+            Logout
+          </button>
+          <button
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+            id="menu-btn"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <a
+            href="/pages/cart/cart.html"
+            class="inline-flex border-[2px] border-gray-600 items-center p-2 w-10 h-10 justify-center text-sm rounded-lg focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+          >
+            <img class="w-8 h-8" src="./images/cart2.svg" alt="" />
+          </a>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="relative top-20">
+      <div class="container mx-auto p-6">
+        <h1 class="font-semibold text-6xl mb-8 text-center text-gray-800">
+          Here is a collection of our products
+        </h1>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"
+        >
+          <div
+            class="card duration-700 flex flex-wrap w-full hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/shoes1.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg w-full product-name font-semibold mb-2">
+                men's shoes
+              </h2>
+              <p class="description w-full text-sm mb-7 text-muted-foreground">
+                men's shoes natural leather
+              </p>
+              <p class="product-price w-full text-lg font-semibold mb-2">
+                $39.99
+              </p>
+              <button
+                class="bg-blue-600 add-cart w-full text-white hover:bg-primary/80 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/shoes2.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg product-name font-semibold mb-2">Sneakers</h2>
+              <p class="description text-sm mb-7 text-muted-foreground">
+                Unisex Basic Canvas Lace-up Sneakers
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$29.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/mobile1.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg product-name font-semibold mb-2">
+                Galaxy A15
+              </h2>
+              <p
+                class="text-sm description product-nametext-muted-foreground mb-2"
+              >
+                Galaxy Adescription 15 Dual Sim Blue Black 8GB RAM 256GB 4G -
+                Middle East Version
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$179.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/dslr1.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg product-name font-semibold mb-2">EOS R10</h2>
+              <p class="description text-sm text-muted-foreground mb-2">
+                EOS R10 Mirrorless Camera + RF-S 18-45mm F4.5-6.3 IS STM Lens
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$999.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/menwear1.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg product-name font-semibold mb-2">Hoodie</h2>
+              <p class="description text-sm mb-7 text-muted-foreground">
+                AE 24/7 Good Vibes Hoodie
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$109.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/mobile2.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg product-name font-semibold mb-2">
+                OPPO Reno 12F
+              </h2>
+              <p class="text-sm description mb-2">
+                Reno 12F description 4G Dual SIM Olive Green 8GB RAM 256GB -
+                International Version
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$129.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/handbag1.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="text-lg product-name font-semibold mb-2">
+                Shoulder Bag
+              </h2>
+              <p class="text-sm description mb-2">
+                BS Soft quilted Canvas shoulder bag for Women - Black
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$49.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="card duration-700 flex flex-wrap hover:translate-y-[-15px] rounded-lg overflow-hidden shadow-lg p-4 bg-white"
+          >
+            <img
+              class="product-img"
+              src="./images/monitor1.avif"
+              alt="Product 3"
+              class="w-full"
+            />
+            <div class="self-end w-full">
+              <h2 class="product-name text-lg font-semibold mb-2">
+                Gaming Monitor
+              </h2>
+              <p class="description text-sm mb-2">
+                27 Inch Odyssey G5 Gaming Monitor With 1000R Curved Screen 144Hz
+                Premium QHD Black
+              </p>
+              <p class="product-price text-lg font-semibold mb-2">$99.99</p>
+              <button
+                class="add-cart bg-blue-600 w-full text-white hover:bg-blue-700 px-4 py-2 rounded"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./logic/home.js"></script>
+  </body>
+</html>
