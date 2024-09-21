@@ -17,7 +17,7 @@ document.querySelector('button').onclick = function(e){
             products: [],
         }
         localStorage.setItem('user', JSON.stringify(user))
-        window.location.href = 'pages/index.html'
+        window.location.href = 'index.html'
         username.value = '';
         password.value = '';
     }
