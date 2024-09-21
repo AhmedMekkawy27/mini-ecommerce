@@ -2,6 +2,7 @@ let data = JSON.parse(localStorage.getItem('user'))
 let cartItems = document.querySelector('.cart-items')
 let total = document.querySelector('.total')
 let product;
+let menuBtn = document.getElementById('menu-btn');
 
 if(!localStorage.getItem('user')){
     window.location.href = 'login.html';
@@ -33,15 +34,19 @@ if(data.products.length > 0){
         `
         cartItems.appendChild(product)
 
+        // Remove the minus button once quantity reaches zero
         if(product.querySelector('.quantity-wrapper').querySelector('.quantity').textContent == 0){
             product.querySelector('.quantity-wrapper').querySelector('.quantity').previousElementSibling.classList.add('hidden')
         }else{
             product.querySelector('.quantity-wrapper').querySelector('.quantity').nextElementSibling.classList.remove('hidden')
         }
     })
+
+    // Update total price after quantity changes
     total.textContent = `$${data.products.reduce((acc, curr) => acc + curr.price * curr.quantity, 0).toFixed(2)}`
 
     document.addEventListener('click', function(event){
+        // Decrease quantity
         if(event.target.classList.contains('quantity-decrease')){
             data.products.forEach(function(item, index, arr){
                 if(event.target.parentNode.previousElementSibling.querySelector('.item-wrapper').querySelector('.description').textContent == item.description){
@@ -52,6 +57,8 @@ if(data.products.length > 0){
                         ...arr.filter(p => p.description!== item.description),
                     ]
                     localStorage.setItem('user', JSON.stringify({...data, products: products}))
+
+                    // Update total price after quantity changes
                     total.textContent = `$${arr.reduce((acc, curr) => acc + curr.price * curr.quantity, 0).toFixed(2)}`
                 }
             })
@@ -60,6 +67,7 @@ if(data.products.length > 0){
             }
         }
     
+        // Increase Quantity
         else if(event.target.classList.contains('quantity-increase')){
             data.products.forEach(function(item, index, arr){
                 if(event.target.parentNode.previousElementSibling.querySelector('.item-wrapper').querySelector('.description').textContent === item.description){
@@ -70,6 +78,8 @@ if(data.products.length > 0){
                         ...arr.filter(p => p.description!== item.description),
                     ]
                     localStorage.setItem('user', JSON.stringify({...data, products: products}))
+
+                    // Update total price after quantity changes
                     total.textContent = `$${arr.reduce((acc, curr) => acc + curr.price * curr.quantity, 0).toFixed(2)}`
                 }
             })
@@ -78,11 +88,14 @@ if(data.products.length > 0){
             }
         }
     
+        // Remove Product
         else if(event.target.classList.contains('remove')){
             let products = data.products.filter(p => p.description!== event.target.parentNode.previousElementSibling.querySelector('.item-wrapper').querySelector('.description').textContent)
             data.products = products
+
+            // Update total price after quantity changes
             total.textContent = `$${data.products.reduce((acc, curr) => acc + curr.price * curr.quantity, 0).toFixed(2)}`
-            console.log(products)
+            
             localStorage.setItem('user', JSON.stringify({...data, products: products}))
             event.target.parentNode.parentNode.remove()
         }
@@ -92,7 +105,13 @@ if(data.products.length > 0){
     total.textContent = `$${data.products.length.toFixed(2)}`
 }
 
+// Logout button
 document.querySelector('.logout').onclick = function() {
     localStorage.removeItem('user')
     window.location.href = 'login.html'
+}
+
+// Navbar mobile menu
+menuBtn.onclick = function() {
+    document.getElementById('navbar-sticky').classList.toggle('hidden')
 }

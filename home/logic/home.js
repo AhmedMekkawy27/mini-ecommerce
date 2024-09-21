@@ -1,17 +1,27 @@
 let menuBtn = document.getElementById('menu-btn');
 let addCart = document.querySelectorAll('.add-cart');
 let data = JSON.parse(localStorage.getItem('user'))
+let cartLink = document.querySelector('.cart-link').querySelector('span');
+console.log(cartLink)
 let product = {}
 let productCounter;
 
+// Check if user is logged in or not
 if(!localStorage.getItem('user')){
     window.location.href = 'login.html';
 }
 
+// Navbar mobile menu
 menuBtn.onclick = function() {
     document.getElementById('navbar-sticky').classList.toggle('hidden')
 }
 
+if(data.products.length > 0){
+    cartLink.classList.remove('hidden')
+    cartLink.textContent = data.products.reduce((acc, curr) => acc + curr.quantity, 0)
+}
+
+// Add the product to cart
 addCart.forEach(function(item){
     item.addEventListener('click', function(e){
         if(data.products.length > 0){
@@ -37,6 +47,12 @@ addCart.forEach(function(item){
         ]
             localStorage.setItem('user', JSON.stringify(data))
             productCounter = 1
+
+            // Update cart link
+            if(cartLink.classList.contains('hidden')){
+                cartLink.classList.remove('hidden')
+            }
+            cartLink.textContent = data.products.reduce((acc, curr) => acc + curr.quantity, 0)
     })
 })
 
