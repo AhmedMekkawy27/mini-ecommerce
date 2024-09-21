@@ -4,7 +4,7 @@ let total = document.querySelector('.total')
 let product;
 
 if(!localStorage.getItem('user')){
-    window.location.href = '/login/index.html';
+    window.location.href = 'login/login.html';
 }
 
 if(data.products.length > 0){
@@ -94,5 +94,5 @@ if(data.products.length > 0){
 
 document.querySelector('.logout').onclick = function() {
     localStorage.removeItem('user')
-    window.location.href = '/login/index.html'
+    window.location.href = 'login/login.html'
 }
