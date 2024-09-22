@@ -2,7 +2,6 @@ let menuBtn = document.getElementById('menu-btn');
 let addCart = document.querySelectorAll('.add-cart');
 let data = JSON.parse(localStorage.getItem('user'))
 let cartLink = document.querySelector('.cart-link').querySelector('span');
-console.log(cartLink)
 let product = {}
 let productCounter;
 
@@ -18,8 +17,18 @@ menuBtn.onclick = function() {
 
 if(data.products.length > 0){
     cartLink.classList.remove('hidden')
-    cartLink.textContent = data.products.reduce((acc, curr) => acc + curr.quantity, 0)
+    cartLink.textContent = data.products.length
 }
+
+
+addCart.forEach(function(item){
+    data.products.forEach(function(product){
+        if(item.querySelector('span').parentNode.previousElementSibling.previousElementSibling.textContent.trim() === product.description){
+            item.querySelector('span').textContent = product.quantity
+            item.querySelector('span').classList.remove('hidden')
+        }
+    })
+})
 
 // Add the product to cart
 addCart.forEach(function(item){
@@ -47,12 +56,18 @@ addCart.forEach(function(item){
         ]
             localStorage.setItem('user', JSON.stringify(data))
             productCounter = 1
+            
+            item.querySelector('span').textContent = product.quantity
+
+            if(item.querySelector('span').classList.contains('hidden')){
+                item.querySelector('span').classList.remove('hidden')
+            }
 
             // Update cart link
             if(cartLink.classList.contains('hidden')){
                 cartLink.classList.remove('hidden')
             }
-            cartLink.textContent = data.products.reduce((acc, curr) => acc + curr.quantity, 0)
+            cartLink.textContent = data.products.length
     })
 })
 
