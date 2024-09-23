@@ -1,4 +1,4 @@
-let username = document.getElementById('username');
+let email = document.getElementById('email');
 let password = document.getElementById('password');
 let = user = {}
 
@@ -8,10 +8,10 @@ if(localStorage.getItem('user')){
 
 document.querySelector('button').onclick = function(e){
     e.preventDefault();
-    if(username.value !== '' || password.value !== ''){
+    if(email.value !== '' || password.value !== ''){
         user = {
             credintials: {
-                username: username.value,
+                email: email.value,
                 password: password.value
             },
             products: [],
