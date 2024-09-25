@@ -8,7 +8,7 @@ if(localStorage.getItem('user')){
 
 document.querySelector('button').onclick = function(e){
     e.preventDefault();
-    if(email.value !== '' || password.value !== ''){
+    if(email.value !== '' && password.value !== ''){
         user = {
             credintials: {
                 email: email.value,
@@ -20,6 +20,8 @@ document.querySelector('button').onclick = function(e){
         window.location.href = 'index.html'
         username.value = '';
         password.value = '';
+    }else{
+        alert('Please fill in both fields')
     }
  
 }
